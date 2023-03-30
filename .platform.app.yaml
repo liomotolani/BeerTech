@@ -1,0 +1,15 @@
+name: app
+type: "java:8"
+
+disk: 1024
+
+hooks:
+  build: mvn clean package -Dmaven.test.skip=true
+
+
+relationships:
+  mongodatabase: "dbmongo:mongodb"
+
+web:
+  commands:
+    start: java -jar $JAVA_OPTS target/spring-mvc-maven-mongodb.jar --server.port=$PORT
