@@ -12,6 +12,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/util/DefaultInitializer.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/util/GenericUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
