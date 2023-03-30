@@ -8,7 +8,6 @@ com/beerkhaton/mealtrackerapi/controller/AuthController.class
 com/beerkhaton/mealtrackerapi/dto/input/LoginInputDTO$First.class
 com/beerkhaton/mealtrackerapi/controller/Controller.class
 com/beerkhaton/mealtrackerapi/dto/enums/UserRole.class
-com/beerkhaton/mealtrackerapi/util/RestUtils.class
 com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.class
 com/beerkhaton/mealtrackerapi/model/User$UserBuilder.class
 com/beerkhaton/mealtrackerapi/repository/UserRepository.class
