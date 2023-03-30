@@ -14,8 +14,15 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/util/GenericUtil.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.environment" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform.app.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform/.routes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform/.services.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform/local/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform/local/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.platform/local/project.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.java" afterDir="false" />
