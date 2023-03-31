@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acd28222-e50b-4e36-902b-a77cb82d2612" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/dto/output/EmployeeHistoryResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/repository/UserHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/repository/UserHistoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

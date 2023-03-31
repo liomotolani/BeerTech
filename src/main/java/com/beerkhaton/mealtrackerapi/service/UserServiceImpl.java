@@ -19,9 +19,6 @@ import com.beerkhaton.mealtrackerapi.util.GenericUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.beerkhaton.mealtrackerapi.config.TokenProvider;
 import com.beerkhaton.mealtrackerapi.dto.input.LoginInputDTO;
-import com.google.zxing.*;
-import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
-import com.google.zxing.common.HybridBinarizer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,12 +33,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -134,7 +126,7 @@ public class UserServiceImpl implements UserService{
             String code = GenericUtil.generateAlphaNumeric(12);
             String password = GenericUtil.generateAlphaNumeric(8);
             User user = getUser(dto, password);
-            emailService.sendNewUserEmail(dto.getEmail(),dto.getName(),password,code);
+            emailService.sendNewUserEmail(dto.getEmail(),dto.getName(),password);
             userRepository.save(user);
             manualCacheHandler.addToCache(code,user.getEmail());
             return new BasicResponseDTO(Status.SUCCESS, user);
