@@ -21,5 +21,5 @@ public interface UserRepository extends CrudRepository<User,String> {
 
     List<User> findByMealStatus(MealStatus status);
 
-    Page<User> findByRoleAndMealStatusAndCreatedDate(UserRole role, MealStatus status, Date date, Pageable pageable);
+    Page<User> findByRoleAndMealStatusAndCreatedDateBetween(UserRole role, MealStatus status, Date from, Date to,Pageable pageable);
 }

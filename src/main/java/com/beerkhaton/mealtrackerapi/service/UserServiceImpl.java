@@ -11,6 +11,7 @@ import com.beerkhaton.mealtrackerapi.dto.output.BasicResponseDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.LoginResponseDTO;
 import com.beerkhaton.mealtrackerapi.model.User;
 import com.beerkhaton.mealtrackerapi.repository.UserRepository;
+import com.beerkhaton.mealtrackerapi.util.DateUtil;
 import com.beerkhaton.mealtrackerapi.util.GenericUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.beerkhaton.mealtrackerapi.config.TokenProvider;
@@ -240,8 +241,11 @@ public class UserServiceImpl implements UserService{
             return new BasicResponseDTO(Status.FORBIDDEN);
         }
         Pageable pageable = getPageable(pageNo);
+        Date dateTo = new Date();
+        Date dateFrom = DateUtil.subtractDays(dateTo, 1);
         List<User> employees = userRepository
-                .findByRoleAndMealStatusAndCreatedDate(UserRole.EMPLOYEE,MealStatus.INACTIVE,new Date(),pageable).toList();
+                .findByRoleAndMealStatusAndCreatedDateBetween
+                        (UserRole.EMPLOYEE,MealStatus.INACTIVE,dateFrom, dateTo,pageable).toList();
 
         log.info("{}", employees);
         return new BasicResponseDTO(Status.SUCCESS,employees);
