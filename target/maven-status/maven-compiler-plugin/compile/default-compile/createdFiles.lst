@@ -33,10 +33,13 @@ com/beerkhaton/mealtrackerapi/config/SwaggerConfig.class
 com/beerkhaton/mealtrackerapi/dto/input/UserInputDTO$First.class
 com/beerkhaton/mealtrackerapi/service/UserService.class
 com/beerkhaton/mealtrackerapi/dto/input/LoginInputDTO$Second.class
+com/beerkhaton/mealtrackerapi/repository/UserHistoryRepository.class
+com/beerkhaton/mealtrackerapi/model/UserHistory.class
 com/beerkhaton/mealtrackerapi/config/SpringContext.class
 com/beerkhaton/mealtrackerapi/util/DateUtil.class
 com/beerkhaton/mealtrackerapi/dto/input/LoginInputDTO$Third.class
 com/beerkhaton/mealtrackerapi/util/Constants.class
+com/beerkhaton/mealtrackerapi/model/UserHistory$UserHistoryBuilder.class
 com/beerkhaton/mealtrackerapi/service/UserServiceImpl.class
 com/beerkhaton/mealtrackerapi/MealTrackerApiApplication.class
 com/beerkhaton/mealtrackerapi/dto/input/UserInputDTO$Third.class

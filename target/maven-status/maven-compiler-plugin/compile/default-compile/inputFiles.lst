@@ -4,6 +4,7 @@
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/schedular/SchedulerConfig.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/util/DefaultInitializer.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/config/AuthTokenFilter.java
+/Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/repository/UserHistoryRepository.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/config/CORSFilter.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/dto/enums/Status.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/util/GenericUtil.java
@@ -32,4 +33,5 @@
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/config/WebSecurityConfig.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/dto/input/LoginInputDTO.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.java
+/Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/model/UserHistory.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/config/SpringContext.java
