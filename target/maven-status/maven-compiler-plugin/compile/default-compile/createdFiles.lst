@@ -12,6 +12,7 @@ com/beerkhaton/mealtrackerapi/schedular/Scheduler.class
 com/beerkhaton/mealtrackerapi/dto/enums/Status.class
 com/beerkhaton/mealtrackerapi/controller/Controller$1.class
 com/beerkhaton/mealtrackerapi/cache/ManualCacheHandler.class
+com/beerkhaton/mealtrackerapi/dto/output/EmployeeHistoryResponseDTO.class
 com/beerkhaton/mealtrackerapi/dto/input/PasswordInputDTO$First.class
 com/beerkhaton/mealtrackerapi/dto/input/UserInputDTO.class
 com/beerkhaton/mealtrackerapi/dto/enums/Gender.class

@@ -3,6 +3,7 @@ package com.beerkhaton.mealtrackerapi.service;
 import com.beerkhaton.mealtrackerapi.dto.input.PasswordInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.input.UserInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.BasicResponseDTO;
+import com.beerkhaton.mealtrackerapi.dto.output.EmployeeHistoryResponseDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.LoginResponseDTO;
 import com.beerkhaton.mealtrackerapi.dto.input.LoginInputDTO;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +24,7 @@ public interface UserService extends UserDetailsService {
 
     BasicResponseDTO readQrCode(String code);
 
-    BasicResponseDTO fetchEmployeeOrderHistory(int pageNo);
+    EmployeeHistoryResponseDTO fetchEmployeeOrderHistory(int pageNo);
 
     BasicResponseDTO fetchEmployeeOrderHistoryBetweenDates(String from, String to, int pageNo);
 

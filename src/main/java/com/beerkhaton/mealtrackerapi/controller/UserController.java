@@ -3,6 +3,7 @@ package com.beerkhaton.mealtrackerapi.controller;
 
 import com.beerkhaton.mealtrackerapi.dto.input.UserInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.BasicResponseDTO;
+import com.beerkhaton.mealtrackerapi.dto.output.EmployeeHistoryResponseDTO;
 import com.beerkhaton.mealtrackerapi.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +34,7 @@ public class UserController extends Controller{
     }
 
     @GetMapping("/order_history")
-    public BasicResponseDTO fetchEmployeeOrderHistory(@RequestParam("pageNo") int pageNo) throws Exception {
+    public EmployeeHistoryResponseDTO fetchEmployeeOrderHistory(@RequestParam("pageNo") int pageNo) throws Exception {
         return updateHttpStatus(userService.fetchEmployeeOrderHistory(pageNo));
     }
 

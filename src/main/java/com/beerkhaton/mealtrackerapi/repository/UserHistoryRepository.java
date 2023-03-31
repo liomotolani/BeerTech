@@ -16,4 +16,6 @@ public interface UserHistoryRepository extends CrudRepository<UserHistory,String
 
 
     Page<UserHistory> findByCreatedDateBetween(Date from, Date to,Pageable pageable);
+
+    List<UserHistory> findUserHistoryByCreatedDateBetween(Date from, Date to);
 }

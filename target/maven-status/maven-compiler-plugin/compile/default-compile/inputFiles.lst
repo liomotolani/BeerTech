@@ -22,6 +22,7 @@
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/MealTrackerApiApplication.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/controller/Controller.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/dto/enums/UserRole.java
+/Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/dto/output/EmployeeHistoryResponseDTO.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailService.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/model/User.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.java

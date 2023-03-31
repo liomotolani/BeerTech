@@ -8,6 +8,7 @@ import com.beerkhaton.mealtrackerapi.dto.enums.UserRole;
 import com.beerkhaton.mealtrackerapi.dto.input.PasswordInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.input.UserInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.BasicResponseDTO;
+import com.beerkhaton.mealtrackerapi.dto.output.EmployeeHistoryResponseDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.LoginResponseDTO;
 import com.beerkhaton.mealtrackerapi.model.User;
 import com.beerkhaton.mealtrackerapi.model.UserHistory;
@@ -243,17 +244,22 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public BasicResponseDTO fetchEmployeeOrderHistory(int pageNo) {
+    public EmployeeHistoryResponseDTO fetchEmployeeOrderHistory(int pageNo) {
         User user = userRepository.findByEmail(tokenProvider.getEmail()).get();
         if(!isAdmin(user)){
-            return new BasicResponseDTO(Status.FORBIDDEN);
+            return new EmployeeHistoryResponseDTO(Status.FORBIDDEN);
         }
         Pageable pageable = getPageable(pageNo);
         Date dateTo = new Date();
         Date dateFrom = DateUtil.subtractDays(dateTo, 1);
         List<UserHistory> employees = userHistoryRepository
                 .findByCreatedDateBetween(dateFrom, dateTo,pageable).toList();
-        return new BasicResponseDTO(Status.SUCCESS,employees);
+        long count = countTickeHistory(dateFrom,dateTo);
+        return new EmployeeHistoryResponseDTO(Status.SUCCESS,employees,count);
+    }
+
+    private long countTickeHistory(Date from, Date to) {
+        return userHistoryRepository.findUserHistoryByCreatedDateBetween(from,to).stream().count();
     }
 
     @Override
