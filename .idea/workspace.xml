@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acd28222-e50b-4e36-902b-a77cb82d2612" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/model/UserHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/repository/UserHistoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/util/DateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +60,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.beerkhaton.mealtrackerapi.repository" />
       <recent name="com.beerkhaton.mealtrackerapi.dto.input" />
     </key>
   </component>

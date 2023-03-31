@@ -23,5 +23,9 @@ public interface UserService extends UserDetailsService {
 
     BasicResponseDTO readQrCode(String code);
 
-    BasicResponseDTO fetchEmployeeWithInActiveStatus(int pageNo);
+    BasicResponseDTO fetchEmployeeOrderHistory(int pageNo);
+
+    BasicResponseDTO fetchEmployeeOrderHistoryBetweenDates(String from, String to, int pageNo);
+
+
 }

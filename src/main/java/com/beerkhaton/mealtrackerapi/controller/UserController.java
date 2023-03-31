@@ -1,7 +1,6 @@
 package com.beerkhaton.mealtrackerapi.controller;
 
 
-import com.beerkhaton.mealtrackerapi.dto.input.PasswordInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.input.UserInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.BasicResponseDTO;
 import com.beerkhaton.mealtrackerapi.service.UserService;
@@ -33,9 +32,14 @@ public class UserController extends Controller{
         return updateHttpStatus(userService.fetchEmployee(id));
     }
 
-    @GetMapping("/in_active")
-    public BasicResponseDTO fetchInActiveEmployee(@RequestParam("pageNo") int pageNo) throws Exception {
-        return updateHttpStatus(userService.fetchEmployeeWithInActiveStatus(pageNo));
+    @GetMapping("/order_history")
+    public BasicResponseDTO fetchEmployeeOrderHistory(@RequestParam("pageNo") int pageNo) throws Exception {
+        return updateHttpStatus(userService.fetchEmployeeOrderHistory(pageNo));
+    }
+
+    @GetMapping("/order_history/filter_by_dates")
+    public BasicResponseDTO filterEmployeeOrderHistory(@RequestParam("from") String from, @RequestParam("to") String to, @RequestParam("pageNo") int pageNo) throws Exception {
+        return updateHttpStatus(userService.fetchEmployeeOrderHistoryBetweenDates(from, to, pageNo));
     }
 
     @GetMapping("/read_qrcode")

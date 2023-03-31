@@ -10,6 +10,8 @@ import com.beerkhaton.mealtrackerapi.dto.input.UserInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.BasicResponseDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.LoginResponseDTO;
 import com.beerkhaton.mealtrackerapi.model.User;
+import com.beerkhaton.mealtrackerapi.model.UserHistory;
+import com.beerkhaton.mealtrackerapi.repository.UserHistoryRepository;
 import com.beerkhaton.mealtrackerapi.repository.UserRepository;
 import com.beerkhaton.mealtrackerapi.util.DateUtil;
 import com.beerkhaton.mealtrackerapi.util.GenericUtil;
@@ -54,6 +56,10 @@ public class UserServiceImpl implements UserService{
     private final TokenProvider tokenProvider;
 
     private final ManualCacheHandler manualCacheHandler;
+
+    private final ObjectMapper mapper;
+
+    private final UserHistoryRepository userHistoryRepository;
 
     @Value("${qr.code.message}")
     private String code;
@@ -228,6 +234,8 @@ public class UserServiceImpl implements UserService{
 
             user.setMealStatus(MealStatus.INACTIVE);
             userRepository.save(user);
+            UserHistory userHistory = mapper.convertValue(user,UserHistory.class);
+            userHistoryRepository.save(userHistory);
             return new BasicResponseDTO(Status.SUCCESS, user);
         }catch (Exception ex){
             return new BasicResponseDTO(Status.BAD_REQUEST, ex.getMessage());
@@ -235,7 +243,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public BasicResponseDTO fetchEmployeeWithInActiveStatus(int pageNo) {
+    public BasicResponseDTO fetchEmployeeOrderHistory(int pageNo) {
         User user = userRepository.findByEmail(tokenProvider.getEmail()).get();
         if(!isAdmin(user)){
             return new BasicResponseDTO(Status.FORBIDDEN);
@@ -243,10 +251,18 @@ public class UserServiceImpl implements UserService{
         Pageable pageable = getPageable(pageNo);
         Date dateTo = new Date();
         Date dateFrom = DateUtil.subtractDays(dateTo, 1);
-        List<User> employees = userRepository
-                .findByRoleAndMealStatusAndCreatedDateBetween(UserRole.EMPLOYEE,MealStatus.INACTIVE,dateFrom, dateTo,pageable).toList();
+        List<UserHistory> employees = userHistoryRepository
+                .findByCreatedDateBetween(dateFrom, dateTo,pageable).toList();
+        return new BasicResponseDTO(Status.SUCCESS,employees);
+    }
 
-        log.info("{}", employees);
+    @Override
+    public BasicResponseDTO fetchEmployeeOrderHistoryBetweenDates(String from, String to, int pageNo) {
+        Date dateFrom = DateUtil.dateFullFormat(from);
+        Date dateTo = DateUtil.dateFullFormat(to);
+        Pageable pageable = getPageable(pageNo);
+        List<UserHistory> employees = userHistoryRepository
+                .findByCreatedDateBetween(dateFrom, dateTo,pageable).toList();
         return new BasicResponseDTO(Status.SUCCESS,employees);
     }
 
