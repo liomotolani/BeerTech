@@ -7,13 +7,16 @@ com/beerkhaton/mealtrackerapi/config/TokenProvider.class
 com/beerkhaton/mealtrackerapi/controller/AuthController.class
 com/beerkhaton/mealtrackerapi/dto/input/LoginInputDTO$First.class
 com/beerkhaton/mealtrackerapi/controller/Controller.class
+com/beerkhaton/mealtrackerapi/dto/input/PasswordInputDTO$Third.class
 com/beerkhaton/mealtrackerapi/dto/enums/UserRole.class
+com/beerkhaton/mealtrackerapi/schedular/SchedulerConfig.class
 com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.class
 com/beerkhaton/mealtrackerapi/model/User$UserBuilder.class
 com/beerkhaton/mealtrackerapi/repository/UserRepository.class
 com/beerkhaton/mealtrackerapi/model/User.class
 com/beerkhaton/mealtrackerapi/dto/output/LoginResponseDTO.class
 com/beerkhaton/mealtrackerapi/config/AuthEntryPointJWT.class
+com/beerkhaton/mealtrackerapi/dto/input/PasswordInputDTO.class
 com/beerkhaton/mealtrackerapi/schedular/Scheduler.class
 com/beerkhaton/mealtrackerapi/config/SwaggerConfig.class
 com/beerkhaton/mealtrackerapi/dto/enums/Status.class
@@ -22,7 +25,9 @@ com/beerkhaton/mealtrackerapi/dto/input/UserInputDTO$First.class
 com/beerkhaton/mealtrackerapi/service/UserService.class
 com/beerkhaton/mealtrackerapi/dto/input/LoginInputDTO$Second.class
 com/beerkhaton/mealtrackerapi/config/SpringContext.class
+com/beerkhaton/mealtrackerapi/cache/ManualCacheHandler.class
 com/beerkhaton/mealtrackerapi/dto/input/LoginInputDTO$Third.class
+com/beerkhaton/mealtrackerapi/dto/input/PasswordInputDTO$First.class
 com/beerkhaton/mealtrackerapi/util/Constants.class
 com/beerkhaton/mealtrackerapi/dto/input/UserInputDTO.class
 com/beerkhaton/mealtrackerapi/dto/enums/Gender.class
@@ -37,3 +42,4 @@ com/beerkhaton/mealtrackerapi/dto/output/BasicResponseDTO.class
 com/beerkhaton/mealtrackerapi/util/GenericUtil.class
 com/beerkhaton/mealtrackerapi/config/CORSFilter.class
 com/beerkhaton/mealtrackerapi/dto/input/LoginInputDTO.class
+com/beerkhaton/mealtrackerapi/dto/input/PasswordInputDTO$Second.class
