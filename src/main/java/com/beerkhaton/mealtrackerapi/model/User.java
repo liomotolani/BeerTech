@@ -42,6 +42,8 @@ public class User {
 
     private Date lastLoginDate;
 
+    private Date lastUpdated;
+
 
 
 }
