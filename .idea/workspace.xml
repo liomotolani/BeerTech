@@ -5,37 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acd28222-e50b-4e36-902b-a77cb82d2612" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/cache/ManualCacheHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/dto/input/PasswordInputDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/schedular/Scheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/schedular/SchedulerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/dto/enums/MealStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beerkhaton/mealtrackerapi/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/meal-tracker-api-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/meal-tracker-api-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/meal-tracker-api-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/meal-tracker-api-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
