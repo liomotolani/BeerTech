@@ -1,9 +1,11 @@
 package com.beerkhaton.mealtrackerapi.service;
 
+import com.beerkhaton.mealtrackerapi.cache.ManualCacheHandler;
 import com.beerkhaton.mealtrackerapi.dto.enums.Gender;
 import com.beerkhaton.mealtrackerapi.dto.enums.MealStatus;
 import com.beerkhaton.mealtrackerapi.dto.enums.Status;
 import com.beerkhaton.mealtrackerapi.dto.enums.UserRole;
+import com.beerkhaton.mealtrackerapi.dto.input.PasswordInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.input.UserInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.BasicResponseDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.LoginResponseDTO;
@@ -13,8 +15,12 @@ import com.beerkhaton.mealtrackerapi.util.GenericUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.beerkhaton.mealtrackerapi.config.TokenProvider;
 import com.beerkhaton.mealtrackerapi.dto.input.LoginInputDTO;
+import com.google.zxing.*;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
+import com.google.zxing.common.HybridBinarizer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,7 +32,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -40,6 +51,11 @@ public class UserServiceImpl implements UserService{
     private final EmailService emailService;
 
     private final TokenProvider tokenProvider;
+
+    private final ManualCacheHandler manualCacheHandler;
+
+    @Value("${qr.code.message}")
+    private String code;
 
     private BCryptPasswordEncoder bcryptEncoder = new BCryptPasswordEncoder(12);
     @Override
@@ -72,6 +88,8 @@ public class UserServiceImpl implements UserService{
                     )
             );
 
+            log.info("{}", authentication);
+
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
             User userObject = user.get();
@@ -90,16 +108,27 @@ public class UserServiceImpl implements UserService{
     public BasicResponseDTO addUser(UserInputDTO dto) {
 
         try{
+
+            Optional<User> admin = userRepository.findByEmail(tokenProvider.getEmail());
+
+            User adminUser = admin.get();
+
+            if(!isAdmin(adminUser)){
+                return new BasicResponseDTO(Status.FORBIDDEN);
+            }
+
             Optional<User> userOptional = userRepository.findByEmail(dto.getEmail());
 
             if(userOptional.isPresent()){
                 return new BasicResponseDTO(Status.CONFLICT, "User with this email already exist");
             }
 
+            String code = GenericUtil.generateAlphaNumeric(12);
             String password = GenericUtil.generateAlphaNumeric(8);
             User user = getUser(dto, password);
-            emailService.sendNewUserEmail(dto.getEmail(),dto.getName(),password);
+            emailService.sendNewUserEmail(dto.getEmail(),dto.getName(),password,code);
             userRepository.save(user);
+            manualCacheHandler.addToCache(code,user.getEmail());
             return new BasicResponseDTO(Status.SUCCESS, user);
         } catch(Exception ex) {
             return new BasicResponseDTO(Status.INTERNAL_ERROR, ex.getMessage());
@@ -123,24 +152,22 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public BasicResponseDTO changeUserStatus(String id) {
-        Optional<User> userOptional = userRepository.findById(id);
-
-        if(!userOptional.isPresent()){
-            return new BasicResponseDTO(Status.NOT_FOUND, "User with this email doesn't exist");
-        }
-        User user = userOptional.get();
-        user.setMealStatus(MealStatus.ACTIVE);
-        userRepository.save(user);
-        return new BasicResponseDTO(Status.SUCCESS);
-    }
-
-    @Override
     public BasicResponseDTO fetchAllEmployee(int pageNo) {
-        Pageable pageable = PageRequest.of(pageNo, 10);
+
+        User user = userRepository.findByEmail(tokenProvider.getEmail()).get();
+        if(!isAdmin(user)){
+            return new BasicResponseDTO(Status.FORBIDDEN);
+        }
+
+        Pageable pageable = getPageable(pageNo);
         List<User> employees = userRepository.findByRole(UserRole.EMPLOYEE,pageable)
                 .stream().collect(Collectors.toList());
         return new BasicResponseDTO(Status.SUCCESS, employees);
+    }
+
+    private Pageable getPageable(int pageNo) {
+        Pageable pageable = PageRequest.of(pageNo, 10);
+        return pageable;
     }
 
     @Override
@@ -152,6 +179,77 @@ public class UserServiceImpl implements UserService{
         }
         User user = userOptional.get();
         return new BasicResponseDTO(Status.SUCCESS, user);
+    }
+
+    @Override
+    public BasicResponseDTO changePassword(String code, PasswordInputDTO dto) {
+
+        String email = manualCacheHandler.getFromCache(code);
+
+        Optional<User> userOptional = userRepository.findByEmail(email);
+
+        if(!userOptional.isPresent()){
+            return new BasicResponseDTO(Status.NOT_FOUND,"User doesn't exist");
+        }
+
+        if(!dto.getPassword().equals(dto.getConfirmPassword())){
+            return new BasicResponseDTO(Status.BAD_REQUEST, "Password doesn't match");
+        }
+
+        User user = userOptional.get();
+
+        user.setPassword(bcryptEncoder.encode(dto.getPassword()));
+
+        user.setLastLoginDate(new Date());
+
+        userRepository.save(user);
+
+        manualCacheHandler.removeCache(code);
+
+        return new BasicResponseDTO(Status.SUCCESS);
+
+    }
+
+    @Override
+    public BasicResponseDTO readQrCode(String text) {
+        try{
+            Optional<User> userOptional = userRepository.findByEmail(tokenProvider.getEmail());
+
+            User user = userOptional.get();
+
+            if(isAdmin(user)){
+                return new BasicResponseDTO(Status.FORBIDDEN);
+            }
+
+            if(!text.equals(code)){
+                return new BasicResponseDTO(Status.BAD_REQUEST, "Invalid QR code");
+            }
+
+            user.setMealStatus(MealStatus.INACTIVE);
+            userRepository.save(user);
+            return new BasicResponseDTO(Status.SUCCESS, user);
+        }catch (Exception ex){
+            return new BasicResponseDTO(Status.BAD_REQUEST, ex.getMessage());
+        }
+    }
+
+    @Override
+    public BasicResponseDTO fetchEmployeeWithInActiveStatus(int pageNo) {
+        User user = userRepository.findByEmail(tokenProvider.getEmail()).get();
+        if(!isAdmin(user)){
+            return new BasicResponseDTO(Status.FORBIDDEN);
+        }
+        Pageable pageable = getPageable(pageNo);
+        List<User> employees = userRepository
+                .findByRoleAndMealStatusAndCreatedDate(UserRole.EMPLOYEE,MealStatus.INACTIVE,new Date(),pageable).toList();
+
+        log.info("{}", employees);
+        return new BasicResponseDTO(Status.SUCCESS,employees);
+    }
+
+
+    private boolean isAdmin(User user){
+        return user.getRole().equals(UserRole.ADMIN);
     }
 
 

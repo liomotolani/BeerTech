@@ -9,6 +9,7 @@
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/service/UserService.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/controller/UserController.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/config/AuthEntryPointJWT.java
+/Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/schedular/Scheduler.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/config/TokenProvider.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/dto/enums/Gender.java
 /Users/omotolaniligali/Downloads/Hackathon/meal-tracker-api/src/main/java/com/beerkhaton/mealtrackerapi/dto/input/UserInputDTO.java

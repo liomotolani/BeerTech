@@ -27,7 +27,7 @@ public class EmailServiceImpl implements EmailService {
 
 
     @Override
-    public void sendNewUserEmail(String email, String username, String password) throws MessagingException, MessagingException, UnsupportedEncodingException {
+    public void sendNewUserEmail(String email, String username, String password, String code) throws MessagingException, MessagingException, UnsupportedEncodingException {
         String content = "    <div>\n" +
                 "        <div style=\" text-align: center;\">\n" +
                 "            <img style=\"margin-top: 2rem; width: 60%; margin-bottom: 1rem;\" class=\"coinstickLogo\" src=\"https://res.cloudinary.com/danfo/image/upload/v1668175622/logo_gzgxwj.png\" alt=\"\"/>\n" +
@@ -45,7 +45,7 @@ public class EmailServiceImpl implements EmailService {
                 "\n" +
                 "<p> Please note that you will be prompted to change your password on your first login. </p>\n"
                 +
-                "        <p>You can access the platform using the link : <span style=\"color: #22AACC; font-weight: 650; font-size: medium;\">"+url+"</span></p>\n" +
+                "        <p>You can access the platform using the link : <span style=\"color: #22AACC; font-weight: 650; font-size: medium;\">"+url+"?code="+code+"</span></p>\n" +
                 "\n" +
                 "        <p>If you have any questions or concerns, please don't hesitate to reach out to us. </p>\n" +
                 "        <p>Best regards,</p>\n" +

@@ -14,6 +14,7 @@ com/beerkhaton/mealtrackerapi/repository/UserRepository.class
 com/beerkhaton/mealtrackerapi/model/User.class
 com/beerkhaton/mealtrackerapi/dto/output/LoginResponseDTO.class
 com/beerkhaton/mealtrackerapi/config/AuthEntryPointJWT.class
+com/beerkhaton/mealtrackerapi/schedular/Scheduler.class
 com/beerkhaton/mealtrackerapi/config/SwaggerConfig.class
 com/beerkhaton/mealtrackerapi/dto/enums/Status.class
 com/beerkhaton/mealtrackerapi/controller/Controller$1.class

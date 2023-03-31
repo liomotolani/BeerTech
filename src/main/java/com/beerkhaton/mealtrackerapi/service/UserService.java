@@ -1,5 +1,6 @@
 package com.beerkhaton.mealtrackerapi.service;
 
+import com.beerkhaton.mealtrackerapi.dto.input.PasswordInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.input.UserInputDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.BasicResponseDTO;
 import com.beerkhaton.mealtrackerapi.dto.output.LoginResponseDTO;
@@ -14,9 +15,13 @@ public interface UserService extends UserDetailsService {
 
     BasicResponseDTO addUser(UserInputDTO dto);
 
-    BasicResponseDTO changeUserStatus(String id);
-
     BasicResponseDTO fetchAllEmployee(int pageNo);
 
     BasicResponseDTO fetchEmployee(String id);
+
+    BasicResponseDTO changePassword(String code, PasswordInputDTO dto);
+
+    BasicResponseDTO readQrCode(String code);
+
+    BasicResponseDTO fetchEmployeeWithInActiveStatus(int pageNo);
 }
