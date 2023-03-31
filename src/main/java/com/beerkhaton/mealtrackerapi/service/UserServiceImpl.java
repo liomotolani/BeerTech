@@ -226,6 +226,7 @@ public class UserServiceImpl implements UserService{
             }
 
             user.setMealStatus(MealStatus.INACTIVE);
+            user.setLastLoginDate(new Date());
             userRepository.save(user);
             UserHistory userHistory = mapper.convertValue(user,UserHistory.class);
             userHistoryRepository.save(userHistory);
