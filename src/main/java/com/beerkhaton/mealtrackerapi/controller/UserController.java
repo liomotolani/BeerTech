@@ -38,7 +38,7 @@ public class UserController extends Controller{
         return updateHttpStatus(userService.fetchEmployeeWithInActiveStatus(pageNo));
     }
 
-    @PatchMapping("/read_qrcode")
+    @GetMapping("/read_qrcode")
     public BasicResponseDTO readQRCode(@RequestParam("code") String code)  {
        return updateHttpStatus(userService.readQrCode(code));
     }

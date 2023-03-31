@@ -50,7 +50,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("Meal Tracker API Documentation")
                 .version("v1.0")
-                .description("K-Logistics API Documentation")
+                .description("Meal Tracker API Documentation")
                 .contact(new Contact("omotolani ligali", "https://github.com/liomotolani","ligaliomotolani@gmail.com"))
                 .license("MIT")
                 .build();

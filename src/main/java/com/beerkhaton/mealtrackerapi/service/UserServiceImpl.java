@@ -244,8 +244,7 @@ public class UserServiceImpl implements UserService{
         Date dateTo = new Date();
         Date dateFrom = DateUtil.subtractDays(dateTo, 1);
         List<User> employees = userRepository
-                .findByRoleAndMealStatusAndCreatedDateBetween
-                        (UserRole.EMPLOYEE,MealStatus.INACTIVE,dateFrom, dateTo,pageable).toList();
+                .findByRoleAndMealStatusAndCreatedDateBetween(UserRole.EMPLOYEE,MealStatus.INACTIVE,dateFrom, dateTo,pageable).toList();
 
         log.info("{}", employees);
         return new BasicResponseDTO(Status.SUCCESS,employees);
