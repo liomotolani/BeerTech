@@ -4,7 +4,13 @@ Meal Tracker Management App is a solution that was created to address employee t
 ### Meal Tracker Management Features
 There are two sides to this application:
 * Admin
-	@@ -14,32 +14,33 @@ There are two sides to this application:
+  * An admin can login 
+  * An admin can change their password
+  * An admin can add employee to create a profile for each employee on the application
+  * An admin can fetch all employees
+  * An admin can view list of employees that have used their meal ticket for the day. 
+* Employee
+  * An employee can login 
   * An employee can change their password
   * An employee can scan the companies QR code to get their meal for the day
 ### Installation Guide
